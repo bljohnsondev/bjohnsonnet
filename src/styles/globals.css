@@ -1,0 +1,28 @@
+html {
+  background-color: var(--bg-color);
+}
+
+body {
+  font-family: var(--font-neo-grotesque);
+  color: var(--fg-color);
+}
+
+h1.pagetitle {
+  color: var(--employment-section-color);
+  font-weight: var(--font-weight-6);
+  font-size: var(--font-size-1);
+  text-transform: uppercase;
+  margin-top: var(--size-2);
+  margin-bottom: var(--size-3);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--size-2);
+}
+
+.error-message {
+  color: var(--form-error-message-color);
+  font-size: var(--font-size-01);
+}

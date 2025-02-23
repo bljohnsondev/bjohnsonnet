@@ -1,0 +1,23 @@
+version: '3'
+
+tasks:
+  build:
+    desc: Build the project
+    cmds:
+      - pnpm run build
+
+  docker-build:
+    desc: Build the Docker image
+    cmds:
+      - docker build --no-cache . -t bljohnsondev/bjohnsonnet:latest -t sh-external.my.home:5000/bljohnsondev/bjohnsonnet
+
+  docker-push:
+    desc: Push the docker image to remote
+    deps:
+      - docker-build
+    cmds:
+      - docker push sh-external.my.home:5000/bljohnsondev/bjohnsonnet 
+
+  default:
+    cmds:
+      - task: build

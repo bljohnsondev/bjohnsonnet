@@ -1,0 +1,132 @@
+:root {
+  --bg-color: #111827;
+  --fg-color: var(--gray-4);
+
+  /* adding an additional font size to add 0.875 to open-props */
+  --font-size-01: 0.875rem;
+
+  --button-color: var(--gray-0);
+  --button-bg-color: var(--blue-9);
+  --button-disabled-color: var(--gray-7);
+  --button-disabled-bg-color: var(--gray-9);
+  --button-hover-color: var(--blue-8);
+
+  --nav-color: var(--gray-5);
+  --nav-bg-color: hsl(var(--gray-10-hsl) / 50%);
+  --nav-border-color: var(--gray-8);
+  --nav-hover-color: var(--gray-1);
+  --nav-selected-color: var(--blue-0);
+  --nav-selected-bg-color: var(--blue-10);
+  --nav-outer-radius: var(--radius-2);
+  --nav-link-radius: var(--radius-2);
+
+  --theme-icon-color: var(--gray-5);
+  --theme-icon-hover-color: var(--gray-4);
+
+  --info-name-color: var(--gray-2);
+  --info-title-color: var(--gray-6);
+  --info-company-color: var(--gray-4);
+  --info-department-color: var(--gray-5);
+  --info-summary-color: var(--gray-6);
+
+  --resume-link-color: var(--gray-2);
+  --resume-link-hover-color: var(--blue-4);
+
+  --actions-icon-color: hsl(var(--gray-3-hsl) / 70%);
+  --actions-icon-hover-color: var(--gray-3);
+  --actions-icon-selected-color: var(--blue-3);
+
+  --about-section-color: var(--gray-5);
+
+  --employment-section-color: var(--gray-4);
+  --job-year-color: var(--gray-6);
+  --job-title-color: var(--gray-3);
+  --job-duty-color: var(--gray-6);
+  --job-skill-color: var(--gray-5);
+  --job-skill-border-color: transparent;
+  --job-skill-bg-color: hsl(var(--blue-8-hsl) / 20%);
+
+  --form-label-color: var(--gray-3);
+  --form-label-required-color: var(--red-7);
+  --form-input-color: var(--gray-3);
+  --form-input-border-color: var(--gray-7);
+  --form-input-bg-color: var(--gray-9);
+  --form-input-focus-color: var(--blue-9);
+  --form-input-disabled-color: var(--gray-7);
+  --form-input-disabled-bg-color: hsl(var(--gray-9-hsl) / 50%);
+  --form-input-disabled-border-color: var(--gray-8);
+  --form-error-message-color: var(--red-7);
+
+  --toast-color: var(--gray-3);
+  --toast-bg-color: var(--gray-8);
+  --toast-close-color: var(--gray-6);
+  --toast-close-hover-color: var(--gray-4);
+  --toast-info-color: var(--blue-5);
+  --toast-success-color: var(--green-5);
+  --toast-warning-color: var(--yellow-5);
+  --toast-error-color: var(--red-5);
+}
+
+html[data-theme='light'] {
+  --bg-color: var(--gray-1);
+  --fg-color: var(--gray-8);
+
+  --button-color: var(--gray-0);
+  --button-bg-color: var(--blue-8);
+  --button-disabled-color: var(--gray-5);
+  --button-disabled-bg-color: var(--gray-3);
+  --button-hover-color: var(--blue-9);
+
+  --nav-color: var(--gray-7);
+  --nav-bg-color: hsl(var(--gray-4-hsl) / 50%);
+  --nav-border-color: var(--gray-5);
+  --nav-hover-color: var(--gray-9);
+  --nav-selected-color: var(--blue-0);
+  --nav-selected-bg-color: var(--blue-8);
+
+  --theme-icon-color: var(--blue-8);
+  --theme-icon-hover-color: var(--blue-6);
+
+  --info-name-color: var(--gray-10);
+  --info-title-color: var(--gray-7);
+  --info-company-color: var(--gray-10);
+  --info-department-color: var(--gray-8);
+  --info-summary-color: var(--gray-7);
+
+  --resume-link-color: var(--gray-7);
+  --resume-link-hover-color: var(--blue-9);
+
+  --actions-icon-color: var(--gray-6);
+  --actions-icon-hover-color: var(--gray-7);
+  --actions-icon-selected-color: var(--blue-6);
+
+  --about-section-color: var(--gray-7);
+
+  --employment-section-color: var(--gray-8);
+  --job-year-color: var(--gray-7);
+  --job-title-color: var(--gray-10);
+  --job-duty-color: var(--gray-7);
+  --job-skill-color: var(--indigo-10);
+  --job-skill-border-color: transparent;
+  --job-skill-bg-color: var(--indigo-1);
+
+  --form-label-color: var(--gray-7);
+  --form-label-required-color: var(--red-7);
+  --form-input-color: var(--gray-9);
+  --form-input-border-color: var(--gray-5);
+  --form-input-bg-color: var(--gray-3);
+  --form-input-focus-color: var(--blue-4);
+  --form-input-disabled-color: var(--gray-7);
+  --form-input-disabled-bg-color: hsl(var(--gray-3-hsl) / 40%);
+  --form-input-disabled-border-color: var(--gray-4);
+  --form-error-message-color: var(--red-7);
+
+  --toast-color: var(--gray-8);
+  --toast-bg-color: var(--gray-4);
+  --toast-close-color: var(--gray-6);
+  --toast-close-hover-color: var(--gray-8);
+  --toast-info-color: var(--blue-8);
+  --toast-success-color: var(--green-8);
+  --toast-warning-color: var(--yellow-8);
+  --toast-error-color: var(--red-8);
+}

@@ -1,0 +1,47 @@
+.field {
+  width: 100%;
+}
+
+.field label {
+  display: block;
+  color: var(--form-label-color);
+  margin-bottom: var(--size-1);
+}
+
+.field label:hover {
+  cursor: default;
+}
+
+.field.required label::after {
+  content: ' *';
+  color: var(--form-label-required-color);
+}
+
+.field input {
+  width: 100%;
+  background-color: var(--form-input-bg-color);
+  border: 1px solid var(--form-input-border-color);
+  color: var(--form-input-color);
+  transition: none;
+  padding: var(--size-2);
+}
+
+.field input:focus {
+  outline: none;
+}
+
+.field input[data-focus] {
+  outline: 2px solid var(--form-input-focus-color);
+  outline-offset: -2px;
+}
+
+.field input[data-hover] {
+  cursor: text;
+}
+
+.field input[data-disabled] {
+  color: var(--form-input-disabled-color);
+  background-color: var(--form-input-disabled-bg-color);
+  border: 1px solid var(--form-input-disabled-border-color);
+  cursor: not-allowed;
+}

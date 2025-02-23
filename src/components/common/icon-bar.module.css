@@ -1,0 +1,29 @@
+.iconbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--size-5);
+  margin-top: var(--size-3);
+}
+
+.iconbar > button {
+  all: unset;
+  cursor: pointer;
+}
+
+.iconbar svg {
+  height: 38px;
+  width: 38px;
+}
+
+@media only screen and (min-width: 768px) {
+  .iconbar {
+    gap: var(--size-3);
+    justify-content: flex-start;
+  }
+
+  .iconbar svg {
+    height: 28px;
+    width: 28px;
+  }
+}

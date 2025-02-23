@@ -1,0 +1,44 @@
+/* basic toastify overrides */
+:root {
+  --toastify-toast-width: 400px;
+}
+
+/* more advanced styling */
+.Toastify__toast {
+  border-radius: var(--radius-2);
+  background-color: var(--toast-bg-color);
+  color: var(--toast-color);
+}
+
+.Toastify__toast--info .Toastify__toast-icon svg {
+  fill: var(--toast-info-color);
+}
+
+.Toastify__toast--success .Toastify__toast-icon svg {
+  fill: var(--toast-success-color);
+}
+
+.Toastify__toast--warning .Toastify__toast-icon svg {
+  fill: var(--toast-warning-color);
+}
+
+.Toastify__toast--error .Toastify__toast-icon svg {
+  fill: var(--toast-error-color);
+}
+
+.Toastify__close-button {
+  color: var(--toast-close-color);
+  opacity: 1;
+}
+
+.Toastify__close-button:hover {
+  color: var(--toast-close-hover-color);
+}
+
+/* add a gap between messages on small screens */
+@media only screen and (max-width: 640px) {
+  .Toastify__toast {
+    margin-bottom: var(--size-2);
+    border-radius: 0;
+  }
+}

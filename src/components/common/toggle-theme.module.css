@@ -1,0 +1,12 @@
+.themelink {
+  color: var(--theme-icon-color);
+}
+
+.themelink svg {
+  height: 32px;
+  width: 32px;
+}
+
+.themelink:hover {
+  color: var(--theme-icon-hover-color);
+}

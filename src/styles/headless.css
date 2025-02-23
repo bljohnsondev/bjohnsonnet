@@ -1,0 +1,25 @@
+/***** Button *****/
+
+button {
+  background-color: var(--button-bg-color);
+  color: var(--button-color);
+  font-size: var(--font-size-01);
+  font-weight: var(--font-weight-6);
+  padding: var(--size-2) var(--size-3);
+  border-radius: var(--radius-2);
+}
+
+button[data-hover] {
+  background-color: var(--button-hover-color);
+}
+
+button[data-focus] {
+  outline: 2px solid var(--button-bg-color);
+  outline-offset: 2px;
+}
+
+button[data-disabled] {
+  color: var(--button-disabled-color);
+  background-color: var(--button-disabled-bg-color);
+  cursor: not-allowed;
+}

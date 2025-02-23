@@ -1,0 +1,40 @@
+.infosection {
+  padding-top: var(--size-4);
+}
+
+.name {
+  font-size: var(--font-size-5);
+  font-weight: var(--font-weight-6);
+  letter-spacing: var(--font-letterspacing-1);
+  color: var(--info-name-color);
+  margin-bottom: var(--size-2);
+}
+
+.title {
+  color: var(--info-title-color);
+  font-size: var(--font-size-3);
+  margin-bottom: var(--size-2);
+}
+
+.company {
+  color: var(--info-company-color);
+  font-size: var(--font-size-1);
+  font-weight: var(--font-weight-5);
+}
+
+.department {
+  color: var(--info-department-color);
+  font-size: var(--font-size-1);
+  font-style: italic;
+}
+
+.summary {
+  color: var(--info-summary-color);
+  margin-top: var(--size-2);
+}
+
+@media only screen and (min-width: 1024px) {
+  .infosection {
+    padding-top: var(--size-9);
+  }
+}

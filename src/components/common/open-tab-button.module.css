@@ -1,0 +1,27 @@
+.openbutton {
+  display: flex;
+  align-items: center;
+  gap: var(--size-2);
+  justify-content: center;
+  width: 100%;
+}
+
+.openbutton svg {
+  height: 16px;
+  width: 16px;
+}
+
+.iconbutton {
+  background-color: transparent;
+  border-radius: var(--border-radius-3);
+}
+
+.iconbutton[data-hover] {
+  background-color: transparent;
+}
+
+@media only screen and (min-width: 768px) {
+  .openbutton {
+    width: auto;
+  }
+}

@@ -1,0 +1,65 @@
+.job {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-3);
+}
+
+.years {
+  font-size: var(--font-size-01);
+  font-weight: var(--font-weight-6);
+  letter-spacing: var(--font-letterspacing-2);
+  text-transform: uppercase;
+  color: var(--job-year-color);
+  padding-top: 3px;
+}
+
+.emptitle {
+  font-size: var(--font-size-1);
+  color: var(--job-title-color);
+}
+
+.jobinfo > ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.jobinfo > ul > li {
+  font-size: var(--font-size-01);
+  padding-block: var(--size-1);
+  color:  var(--job-duty-color);
+}
+
+.skillslist {
+  display: flex;
+  align-items: flex-start;
+  flex-flow: wrap;
+  gap: var(--size-2);
+  margin-top: var(--size-2);
+}
+
+.skill {
+  color: var(--job-skill-color);
+  border: 1px solid var(--job-skill-border-color);
+  border-radius: var(--radius-2);
+  background-color: var(--job-skill-bg-color);
+  font-size: var(--font-size-0);
+  font-weight: var(--font-weight-5);
+  padding: var(--size-1) var(--size-2);
+}
+
+@media only screen and (min-width: 768px) {
+  .job {
+    flex-direction: row;
+  }
+
+  .years {
+    min-width: 140px;
+    font-size: var(--font-size-0);
+    font-weight: var(--font-weight-6);
+    letter-spacing: var(--font-letterspacing-2);
+    text-transform: uppercase;
+    color: var(--job-year-color);
+    padding-top: 3px;
+  }
+}
+

@@ -1,0 +1,18 @@
+.resumelink a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--size-2);
+  color: var(--resume-link-color);
+  font-weight: var(--font-weight-5);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.resumelink a:hover {
+  color: var(--resume-link-hover-color);
+}
+
+.resumelink svg {
+  width: 20px;
+  height: 20px;
+}
