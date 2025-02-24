@@ -1,0 +1,12 @@
+.notfound p {
+  margin-bottom: var(--size-3);
+}
+
+.notfound a {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+.notfound a:hover {
+  color: var(--link-hover-color);
+}
