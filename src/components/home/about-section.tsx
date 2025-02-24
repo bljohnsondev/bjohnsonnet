@@ -8,7 +8,7 @@ export async function AboutSection() {
   return (
     <section>
       <h1 className="pagetitle">About</h1>
-      <div className={styles.about}>
+      <div className={styles.aboutmd}>
         <div dangerouslySetInnerHTML={{ __html: markdownContent }} />
       </div>
     </section>

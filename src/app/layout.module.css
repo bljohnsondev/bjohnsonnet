@@ -12,7 +12,7 @@
 .splitgrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--size-3) var(--size-10);
+  gap: var(--size-3) var(--size-8);
 }
 
 .infocontainer {
@@ -53,7 +53,7 @@
   }
 
   .splitgrid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 40% 1fr;
   }
 
   .resumebar {

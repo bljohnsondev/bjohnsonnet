@@ -1,9 +1,10 @@
-.about p {
+.aboutmd p {
   color: var(--about-section-color);
   font-size: var(--font-size-1);
   margin-bottom: var(--size-3);
+  max-inline-size: fit-content;
 }
 
-.about p:last-child {
+.aboutmd p:last-child {
   margin-bottom: 0;
 }
