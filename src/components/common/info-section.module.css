@@ -1,7 +1,3 @@
-.infosection {
-  padding-top: var(--size-4);
-}
-
 .name {
   font-size: var(--font-size-5);
   font-weight: var(--font-weight-6);
@@ -31,10 +27,4 @@
 .summary {
   color: var(--info-summary-color);
   margin-top: var(--size-2);
-}
-
-@media only screen and (min-width: 1024px) {
-  .infosection {
-    padding-top: var(--size-9);
-  }
 }

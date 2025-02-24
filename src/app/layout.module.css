@@ -5,7 +5,7 @@
 }
 
 .container {
-  margin-inline: var(--size-5);
+  padding-inline: var(--size-5);
   max-width: 1280px;
 }
 
@@ -20,6 +20,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: var(--size-3);
+  padding-top: var(--size-5);
 }
 
 .iconbar {
@@ -39,6 +40,7 @@
 
 @media only screen and (min-width: 1024px) {
   .container {
+    padding-inline: var(--size-5);
     margin-left: auto;
     margin-right: auto;
   }
@@ -47,14 +49,11 @@
     position: sticky;
     top: 0;
     height: 100vh;
+    padding-block: var(--size-9);
   }
 
   .splitgrid {
     grid-template-columns: 1fr 1fr;
-  }
-
-  .iconbar {
-    padding-bottom: var(--size-10);
   }
 
   .resumebar {
@@ -64,5 +63,11 @@
 
   .content {
     padding-block: var(--size-9);
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .container {
+    padding-inline: var(--size-9);
   }
 }
