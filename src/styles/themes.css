@@ -37,7 +37,7 @@
 
   --actions-icon-color: hsl(var(--gray-3-hsl) / 70%);
   --actions-icon-hover-color: var(--gray-3);
-  --actions-icon-selected-color: var(--blue-3);
+  --actions-icon-hover-bg-color: hsl(var(--gray-8-hsl) / 50%);
 
   --about-section-color: var(--gray-5);
 
@@ -104,7 +104,7 @@ html[data-theme='light'] {
 
   --actions-icon-color: var(--gray-6);
   --actions-icon-hover-color: var(--gray-7);
-  --actions-icon-selected-color: var(--blue-6);
+  --actions-icon-hover-bg-color: var(--gray-3);
 
   --about-section-color: var(--gray-7);
 

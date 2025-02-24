@@ -1,12 +1,11 @@
 .iconlink {
   color: var(--actions-icon-color);
-  transition: color 150ms ease;
+  padding: var(--size-2);
+  border-radius: var(--radius-2);
+  transition: color 150ms ease, background-color 150ms ease;
 }
 
 .iconlink:not(.iconselected):hover {
+  background-color: var(--actions-icon-hover-bg-color);
   color: var(--actions-icon-hover-color);
-}
-
-.iconselected {
-  color: var(--actions-icon-selected-color);
 }

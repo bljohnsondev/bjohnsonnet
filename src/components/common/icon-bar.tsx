@@ -13,12 +13,12 @@ export function IconBar({ githubUrl, linkedinUrl }: IconBarProps) {
   return (
     <div className={styles.iconbar}>
       {githubUrl && (
-        <IconLink title="GitHub" ariaLabel="GitHub" openTab href={githubUrl}>
+        <IconLink ariaLabel="GitHub" openTab href={githubUrl}>
           <GithubIcon />
         </IconLink>
       )}
       {linkedinUrl && (
-        <IconLink title="LinkedIn" ariaLabel="LinkedIn" openTab href={linkedinUrl}>
+        <IconLink ariaLabel="LinkedIn" openTab href={linkedinUrl}>
           <LinkedInIcon />
         </IconLink>
       )}

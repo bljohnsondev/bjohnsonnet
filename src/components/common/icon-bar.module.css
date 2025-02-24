@@ -2,8 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--size-5);
-  margin-top: var(--size-3);
+  gap: var(--size-2);
 }
 
 .iconbar > button {
@@ -16,9 +15,8 @@
   width: 38px;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   .iconbar {
-    gap: var(--size-3);
     justify-content: flex-start;
   }
 
