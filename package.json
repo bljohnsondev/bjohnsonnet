@@ -5,8 +5,10 @@
   "scripts": {
     "dev": "next dev --turbopack -H localhost",
     "build": "next build",
+    "dbinit": "prisma migrate dev --name init",
+    "dbgen": "prisma generate",
     "start": "next start",
-    "lint": "next lint && tsc --noEmit"
+    "lint": "biome check src && tsc --noEmit"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
@@ -24,19 +26,10 @@
     "remark-html": "^16.0.1"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@next/eslint-plugin-next": "^15.1.7",
+    "@biomejs/biome": "1.9.4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.1.7",
-    "eslint-config-prettier": "^10.0.1",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-prettier": "^5.2.3",
-    "eslint-plugin-react-hooks": "^5.1.0",
-    "prettier": "^3.5.1",
     "prisma": "^6.4.1",
     "typescript": "^5"
   },

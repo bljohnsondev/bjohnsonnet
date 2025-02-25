@@ -17,8 +17,12 @@ export function NavSection({ items }: NavSectionProps) {
 
   return (
     <nav className={styles.navigation}>
-      {items.map((item, index) => (
-        <Link key={`navitem-${index}`} href={item.url} className={clsx({ [styles.selected]: pathname === item.url })}>
+      {items.map(item => (
+        <Link
+          key={`navitem-${item.url}`}
+          href={item.url}
+          className={clsx({ [styles.selected]: pathname === item.url })}
+        >
           {item.label}
         </Link>
       ))}

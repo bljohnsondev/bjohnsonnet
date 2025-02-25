@@ -13,7 +13,7 @@
 }
 
 .field.required label::after {
-  content: ' *';
+  content: " *";
   color: var(--form-label-required-color);
 }
 

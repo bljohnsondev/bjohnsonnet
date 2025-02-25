@@ -1,6 +1,6 @@
 import { Field, Input as HeadlessInput, type InputProps as HeadlessInputProps, Label } from '@headlessui/react';
 import clsx from 'clsx';
-import { useController, type UseControllerProps } from 'react-hook-form';
+import { type UseControllerProps, useController } from 'react-hook-form';
 
 import styles from './input.module.css';
 

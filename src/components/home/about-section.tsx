@@ -9,6 +9,7 @@ export async function AboutSection() {
     <section>
       <h1 className="pagetitle">About</h1>
       <div className={styles.aboutmd}>
+        {/* biome-ignore lint/security/noDangerouslySetInnerHtml: coming from controlled markdown so it's fine */}
         <div dangerouslySetInnerHTML={{ __html: markdownContent }} />
       </div>
     </section>

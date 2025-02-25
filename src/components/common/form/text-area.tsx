@@ -1,11 +1,11 @@
 import {
   Field,
-  Label,
   Textarea as HeadlessTextarea,
   type TextareaProps as HeadlessTextareaProps,
+  Label,
 } from '@headlessui/react';
 import clsx from 'clsx';
-import { useController, type UseControllerProps } from 'react-hook-form';
+import { type UseControllerProps, useController } from 'react-hook-form';
 
 import styles from './text-area.module.css';
 

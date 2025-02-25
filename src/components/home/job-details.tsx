@@ -19,7 +19,11 @@ export async function JobDetails({ job }: JobDetailsProps) {
         <div className={styles.emptitle}>
           {job.title} &middot; {job.company}
         </div>
-        <ul>{job.duties?.map((duty, index) => <li key={`duty-${job.id}-${index}`}>{duty}</li>)}</ul>
+        <ul>
+          {job.duties?.map((duty, index) => (
+            <li key={`duty-${job.id}-${index}`}>{duty}</li>
+          ))}
+        </ul>
         <div className={styles.skillslist}>
           {job.skills?.map((skillName, index) => {
             const skill = skills.find(sk => sk.name === skillName);

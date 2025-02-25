@@ -26,7 +26,7 @@
 .jobinfo > ul > li {
   font-size: var(--font-size-01);
   padding-block: var(--size-1);
-  color:  var(--job-duty-color);
+  color: var(--job-duty-color);
   max-inline-size: fit-content;
 }
 
@@ -63,4 +63,3 @@
     padding-top: 3px;
   }
 }
-
