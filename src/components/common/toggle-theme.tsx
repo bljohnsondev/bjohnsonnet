@@ -1,20 +1,24 @@
 'use client';
 
-//import { MoonIcon, SunIcon } from '@heroicons/react/16/solid';
 import { Moon, Sun } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
+import { getStorageVar, setStorageVar } from '@/utils';
+
 import styles from './toggle-theme.module.css';
 
 export function ToggleTheme() {
-  const [theme, setTheme] = useState<string>('dark');
+  const [theme, setTheme] = useState<string | null>(null);
 
   useEffect(() => {
-    // theme needs to be initialized on component load so data-theme can be read
-    const dataTheme = document.documentElement.getAttribute('data-theme');
-    if (dataTheme) setTheme(dataTheme);
-  }, []);
+    if (!theme) {
+      const existingTheme = getStorageVar('theme') ?? 'light';
+      setTheme(existingTheme);
+    } else {
+      document.documentElement.setAttribute('data-theme', theme);
+    }
+  }, [theme]);
 
   function handleClick(e: React.MouseEvent<HTMLAnchorElement>) {
     e.preventDefault();
@@ -22,14 +26,12 @@ export function ToggleTheme() {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
 
     setTheme(newTheme);
-    document.documentElement.setAttribute('data-theme', newTheme);
+    setStorageVar('theme', newTheme);
   }
 
   return theme ? (
     <Link href="" aria-label="Toggle Theme" onClick={handleClick} className={styles.themelink}>
       {theme === 'dark' ? <Sun fill="currentColor" /> : <Moon fill="currentColor" />}
     </Link>
-  ) : (
-    <div>NUNYA</div>
-  );
+  ) : null;
 }
