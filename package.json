@@ -1,21 +1,24 @@
 {
   "name": "bjohnson-next",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack -H localhost",
+    "dev-host": "next dev --turbopack",
     "build": "next build",
     "dbinit": "prisma migrate dev --name init",
     "dbgen": "prisma generate",
     "start": "next start",
-    "lint": "biome check src && tsc --noEmit"
+    "lint": "biome check src && biome check scripts && tsc --noEmit",
+    "gen-resume": "tsx scripts/generate-resume-pdf.ts"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
-    "@heroicons/react": "^2.2.0",
     "@prisma/client": "6.4.1",
     "clsx": "^2.1.1",
     "ky": "^1.7.5",
+    "lucide-react": "^0.510.0",
     "next": "15.1.7",
     "open-props": "^1.7.12",
     "react": "^19.0.0",
@@ -30,8 +33,15 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "playwright-chromium": "^1.52.0",
     "prisma": "^6.4.1",
+    "tsx": "^4.19.4",
     "typescript": "^5"
   },
-  "packageManager": "pnpm@10.2.1+sha512.398035c7bd696d0ba0b10a688ed558285329d27ea994804a52bad9167d8e3a72bcb993f9699585d3ca25779ac64949ef422757a6c31102c12ab932e5cbe5cc92"
+  "packageManager": "pnpm@10.2.1+sha512.398035c7bd696d0ba0b10a688ed558285329d27ea994804a52bad9167d8e3a72bcb993f9699585d3ca25779ac64949ef422757a6c31102c12ab932e5cbe5cc92",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "playwright-chromium"
+    ]
+  }
 }

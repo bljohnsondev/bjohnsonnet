@@ -1,0 +1,15 @@
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--gray-10);
+  color: var(--gray-3);
+  height: 32px;
+  width: 32px;
+  border-radius: var(--radius-round);
+}
+
+.circleicon {
+  height: 20px;
+  width: 20px;
+}

@@ -1,0 +1,28 @@
+@media print {
+  @page {
+    margin: 1cm;
+    padding: 0;
+  }
+
+  @page :first {
+    margin: 0 1cm 1cm 1cm;
+  }
+
+  .main {
+    width: auto;
+    padding: 0;
+  }
+}
+
+.main {
+  width: 210mm;
+  min-height: 100vh;
+  color: #000;
+  margin-inline: auto;
+  padding-bottom: 2rem;
+}
+
+.topline {
+  height: 12px;
+  background-color: rgb(93, 23, 37);
+}

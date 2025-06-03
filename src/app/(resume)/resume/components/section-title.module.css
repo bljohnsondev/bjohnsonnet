@@ -1,0 +1,12 @@
+.sectiontitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.label {
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: var(--font-letterspacing-2);
+  color: var(--gray-12);
+}

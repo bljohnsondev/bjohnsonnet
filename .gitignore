@@ -1,4 +1,5 @@
 /data
+/public/*.bak
 /prisma/migrations
 
 # excluding my resume from the source repo

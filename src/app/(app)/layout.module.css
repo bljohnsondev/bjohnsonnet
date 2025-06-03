@@ -1,3 +1,7 @@
+.topcontainer {
+  background-color: var(--bg-color);
+}
+
 .themecontainer {
   position: fixed;
   top: var(--size-4);

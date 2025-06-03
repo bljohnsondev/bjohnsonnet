@@ -1,0 +1,33 @@
+.splitcontent {
+  display: flex;
+  line-height: normal;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.left {
+  color: var(--gray-6);
+  min-width: 107px;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  font-size: 12px;
+}
+
+.left::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #000;
+  border-radius: 50%;
+  left: 77px;
+  top: 6px;
+  z-index: 2;
+}
+
+@media print {
+  .splitcontent {
+    break-inside: avoid;
+  }
+}

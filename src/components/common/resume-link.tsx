@@ -1,4 +1,4 @@
-import { ArrowDownTrayIcon } from '@heroicons/react/16/solid';
+import { CircleArrowDown } from 'lucide-react';
 
 import styles from './resume-link.module.css';
 
@@ -12,7 +12,7 @@ export function ResumeLink({ url }: ResumeLinkProps) {
   return (
     <div className={styles.resumelink}>
       <a href={url} target="_blank" rel="noopener noreferrer">
-        <ArrowDownTrayIcon />
+        <CircleArrowDown />
         Download Resume
       </a>
     </div>

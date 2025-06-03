@@ -1,0 +1,79 @@
+.resumecontainer {
+  display: flex;
+  gap: 18px;
+}
+
+.rightcolumn {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 220px;
+  padding-left: 18px;
+  padding-block: 4px;
+  margin-left: auto;
+  border-left: 2px solid var(--gray-2);
+}
+
+.info {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.infodesc {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-weight: 500;
+  color: var(--gray-8);
+}
+
+.name {
+  font-family: var(--font-humanist);
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.title {
+  font-weight: 500;
+  color: var(--gray-7);
+  letter-spacing: var(--font-letterspacing-2);
+}
+
+.face {
+  width: 80px;
+}
+
+.infoitemlist {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.infoitem {
+  font-size: 14px;
+}
+
+.infoitem h2 {
+  font-weight: 600;
+  line-height: 1;
+  font-size: 14px;
+  padding-bottom: 3px;
+}
+
+.infoskillslist ul {
+  margin-top: 12px;
+  list-style-type: none;
+  padding: 0;
+  font-size: 14px;
+}
+
+.infoskillslist ul li {
+  padding-inline-start: 0;
+  font-weight: 500;
+  font-size: 14px;
+}

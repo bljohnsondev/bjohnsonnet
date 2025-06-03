@@ -1,0 +1,91 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  margin-top: 12px;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 80px;
+  width: 2px;
+  background-color: var(--gray-6);
+  z-index: 0;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  /* needed for stacking context so z-index will work */
+  position: relative;
+  z-index: 1;
+}
+
+.titleleft {
+  width: 65px;
+}
+
+.summary {
+  font-size: 14px;
+}
+
+.workdates {
+  /* this is just to line up the smaller text with the dot */
+  padding-top: 3px;
+}
+
+.workdetails h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--gray-10);
+}
+
+.workdetails h2 {
+  margin: 0;
+  margin-bottom: 6px;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 500;
+  /* this is set in open-props/normalize but for this I need it unset */
+  max-inline-size: none;
+}
+
+.workdetails ul {
+  list-style-type: disc;
+  padding: 0;
+  margin-left: 12px;
+  font-size: 13px;
+  color: var(--gray-7);
+}
+
+.workdetails ul li {
+  padding-inline-start: 0;
+  margin-bottom: 5px;
+}
+
+.education {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.education h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 1px;
+  color: var(--gray-10);
+}
+
+.education div {
+  color: var(--gray-7);
+}

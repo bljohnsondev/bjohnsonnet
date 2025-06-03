@@ -5,6 +5,8 @@ export interface InfoData {
   company?: string;
   department?: string;
   summary?: string[];
+  email?: string;
+  websiteUrl?: string;
   linkedinUrl?: string;
   githubUrl?: string;
   resumeUrl?: string;

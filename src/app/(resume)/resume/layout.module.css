@@ -1,0 +1,25 @@
+.main {
+  /* common for width of an A4 layout */
+  width: 210mm;
+  min-height: 100vh;
+  background-color: #fff;
+  color: var(--gray-12);
+  padding: 2rem;
+}
+
+.main a,
+.main a:visited {
+  color: var(--blue-8);
+}
+
+@media print {
+  @page {
+    margin: 1cm;
+    padding: 0;
+  }
+
+  .main {
+    width: auto;
+    padding: 0;
+  }
+}

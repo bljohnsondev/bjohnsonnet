@@ -1,0 +1,109 @@
+.header > h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-block: 0.875rem;
+  color: rgb(93, 23, 37);
+  letter-spacing: .025rem;
+}
+
+.summary {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-block: 0.5rem;
+}
+
+.summaryitem {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #104d87;
+  font-size: 0.875rem;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #3e3128;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.title > span {
+  background-color: #3e3128;
+  color: #fff;
+  padding: 8px;
+  border-radius: 1e5px;
+}
+
+.resumesection h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.workxp {
+  margin-top: 1rem;
+}
+
+@media print {
+  .workxp {
+    break-inside: avoid;
+  }
+}
+
+.workxptitle {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-bottom: 1px solid #b5b3ad;
+  padding-bottom: 3px;
+}
+
+.workxptitle > span:last-child {
+  color: #7c7b74;
+  font-size: 0.875rem;
+  margin-left: auto;
+}
+
+.workxp > ul {
+  margin: 0.25rem 0 0 0;
+  padding-left: 1rem;
+}
+
+.workxp > ul > li {
+  color: #484848;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+  /* override the open-props normalize for this so they dont wrap */
+  max-inline-size: fit-content;
+}
+
+.education > span {
+  font-size: 0.875rem;
+}
+
+.skillslist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style-type: none;
+  margin: 1rem 0 0 0;
+  padding: 0;
+}
+
+.skillslist > li {
+  margin: 0;
+  padding: 3px 8px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background-color: #eeeeec;
+  border: 1px solid #b5b3ad;
+  color: #31312e;
+  border-radius: 5px;
+  justify-self: center;
+}
