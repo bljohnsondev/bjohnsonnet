@@ -13,7 +13,7 @@ export function ToggleTheme() {
 
   useEffect(() => {
     if (!theme) {
-      const existingTheme = getStorageVar('theme') ?? 'light';
+      const existingTheme = getStorageVar('theme') ?? 'dark';
       setTheme(existingTheme);
     } else {
       document.documentElement.setAttribute('data-theme', theme);
