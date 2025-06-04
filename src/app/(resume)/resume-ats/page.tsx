@@ -53,7 +53,7 @@ export default async function Resume() {
             <div className={styles.workxptitle}>
               <span>{job.title}</span>
               <span>
-                {job.monthStart} {job.yearStart} - {job.yearEnd ? `${job.monthEnd} ${job.yearEnd}` : 'Current'}
+                {job.monthStart} {job.yearStart} - {job.yearEnd ? `${job.monthEnd} ${job.yearEnd}` : 'Present'}
               </span>
             </div>
             {job.duties && (
