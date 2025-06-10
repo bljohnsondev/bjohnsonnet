@@ -64,14 +64,28 @@ export default async function Resume() {
             )}
           </div>
         </div>
-        <div className={styles.infoskillslist}>
-          <SectionTitle icon={Braces}>Skills</SectionTitle>
-          <ul>
-            {resumeData.skills?.map(skillShort => (
-              <li key={`isk-${skillShort}`}>{getSkillName(skillShort)}</li>
-            ))}
-          </ul>
-        </div>
+        {resumeData.skills && (
+          <div className={styles.infoskillslist}>
+            <SectionTitle icon={Braces}>Skills</SectionTitle>
+            <ul>
+              {resumeData.skills.frontend?.map(skillShort => (
+                <li key={`isk-${skillShort}`}>{getSkillName(skillShort)}</li>
+              ))}
+              {resumeData.skills.backend?.map(skillShort => (
+                <li key={`isk-${skillShort}`}>{getSkillName(skillShort)}</li>
+              ))}
+              {resumeData.skills.database?.map(skillShort => (
+                <li key={`isk-${skillShort}`}>{getSkillName(skillShort)}</li>
+              ))}
+              {resumeData.skills.tools?.map(skillShort => (
+                <li key={`isk-${skillShort}`}>{getSkillName(skillShort)}</li>
+              ))}
+              {resumeData.skills.methodologies?.map(skillShort => (
+                <li key={`isk-${skillShort}`}>{getSkillName(skillShort)}</li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   );

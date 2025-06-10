@@ -4,7 +4,7 @@ import { Moon, Sun } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
-import { getStorageVar, setStorageVar } from '@/utils';
+import { getStorageVar, setStorageVar } from '@/utils/storage';
 
 import styles from './toggle-theme.module.css';
 

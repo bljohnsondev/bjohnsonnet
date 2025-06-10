@@ -1,9 +1,7 @@
 import clsx from 'clsx';
 import { Building2, GraduationCap, ListCheck, Mail, SquareArrowOutUpRight } from 'lucide-react';
 
-//import { Braces, User } from 'lucide-react';
-
-//import { getInfo, getResumeData, getSkills } from '@/lib/data-loader';
+import { SkillSection } from '@/components/common/resume-skill-section';
 import { getEmployment, getInfo, getResumeData, getSkills } from '@/lib/data-loader';
 
 import { GithubIcon } from '@/icons/github-icon';
@@ -17,10 +15,6 @@ export default async function Resume() {
   const jobs = await getEmployment();
   const skills = await getSkills();
 
-  function getSkillName(skillShort: string): string | undefined {
-    return skills.find(sk => sk.name === skillShort)?.label;
-  }
-
   function stripHttps(url: string): string {
     return url.replace(/^(http|https):\/\//, '');
   }
@@ -29,7 +23,9 @@ export default async function Resume() {
     <>
       <header className={styles.header}>
         <h1>{info.name}</h1>
-        <article>{resumeData.summary}</article>
+        <article>
+          {resumeData.summary} {resumeData.seeking}
+        </article>
         <section className={styles.summary}>
           {info.email && <LinkItem icon={<Mail size={16} />} label={info.email} url={`mailto:${info.email}`} />}
           {info.websiteUrl && (
@@ -66,6 +62,18 @@ export default async function Resume() {
           </div>
         ))}
       </section>
+      {resumeData.skills && (
+        <section className={styles.resumesection}>
+          <TitleWithIcon icon={<ListCheck size={18} />} label="Skills" />
+          <div className={styles.skillgroups}>
+            <SkillSection title="Frontend" allSkills={skills} skillNames={resumeData.skills.frontend} />
+            <SkillSection title="Backend" allSkills={skills} skillNames={resumeData.skills.backend} />
+            <SkillSection title="Database" allSkills={skills} skillNames={resumeData.skills.database} />
+            <SkillSection title="Tools" allSkills={skills} skillNames={resumeData.skills.tools} />
+            <SkillSection title="Methodologies" allSkills={skills} skillNames={resumeData.skills.methodologies} />
+          </div>
+        </section>
+      )}
       {resumeData.education && (
         <section className={clsx(styles.resumesection, styles.education)}>
           <TitleWithIcon icon={<GraduationCap size={18} />} label="Education" />
@@ -75,14 +83,6 @@ export default async function Resume() {
           </span>
         </section>
       )}
-      <section className={styles.resumesection}>
-        <TitleWithIcon icon={<ListCheck size={18} />} label="Skills" />
-        <ul className={styles.skillslist}>
-          {resumeData.skills?.map(skillShort => (
-            <li key={`isk-${skillShort}`}>{getSkillName(skillShort)}</li>
-          ))}
-        </ul>
-      </section>
     </>
   );
 }

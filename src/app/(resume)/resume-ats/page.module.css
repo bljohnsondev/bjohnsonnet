@@ -87,23 +87,8 @@
   font-size: 0.875rem;
 }
 
-.skillslist {
+.skillgroups {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 1rem;
-  list-style-type: none;
-  margin: 1rem 0 0 0;
-  padding: 0;
-}
-
-.skillslist > li {
-  margin: 0;
-  padding: 3px 8px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  background-color: #eeeeec;
-  border: 1px solid #b5b3ad;
-  color: #31312e;
-  border-radius: 5px;
-  justify-self: center;
 }

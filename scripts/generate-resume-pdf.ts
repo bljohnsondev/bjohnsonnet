@@ -2,13 +2,7 @@ import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { type Browser, chromium } from 'playwright-chromium';
 
-const url = 'http://localhost:3000/resume';
-//const url = 'http://localhost:3000/resume-ats';
-
-const filename = 'brentjohnson_resume.pdf';
-//const filename = 'brentjohnson_resume_ats.pdf';
-
-async function generatePdf() {
+async function generatePdf(url: string, filename: string) {
   let browser: Browser | undefined;
 
   try {
@@ -41,4 +35,11 @@ async function generatePdf() {
   }
 }
 
-generatePdf();
+const args = process.argv.slice(2);
+
+if (args.length < 1) {
+  console.log('resume requires the URL and filename:\ngen-resume http://localhost:3000/resume brentjohnson_resume.pdf');
+  process.exit(1);
+}
+
+generatePdf(args[0], args[1]);

@@ -11,7 +11,7 @@
     "dbgen": "prisma generate",
     "start": "next start",
     "lint": "biome check src && biome check scripts && tsc --noEmit",
-    "gen-resume": "tsx scripts/generate-resume-pdf.ts"
+    "gen-resume": "tsx scripts/generate-resume-pdf.ts http://localhost:3000/resume-ats brentjohnson_resume.pdf"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
