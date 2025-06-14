@@ -1,0 +1,10 @@
+FROM node:18-alpine AS migrator_base
+
+WORKDIR /app
+
+COPY package.json pnpm-lock.yaml ./
+# set prod=false to ensure devDependencies (like prisma) are installed
+RUN corepack enable pnpm && pnpm install --frozen-lockfile --prod=false
+COPY prisma ./prisma
+
+ENTRYPOINT ["pnpm", "exec", "prisma", "migrate", "deploy"]

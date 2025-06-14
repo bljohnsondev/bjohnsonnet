@@ -1,14 +1,45 @@
 version: '3'
 
 tasks:
+  clean:
+    desc: Clean the project
+    cmds:
+      - rm -rf ./dist
+      - rm -f ./public/brentjohnson_resume.pdf
+
+  gen-resume:
+    desc: Generate the resume
+    cmds:
+      - typst compile ./templates/resume.typ ./public/brentjohnson_resume.pdf --root .
+
   build:
     desc: Build the project
+    deps:
+      - clean
     cmds:
+      - task: gen-resume
       - pnpm run build
+
+  migrator-build:
+    desc: Build the migrator docker image
+    deps:
+      - clean
+    cmds:
+      - sudo docker build --no-cache . -t bljohnsondev/bjohnsonnet-migrator:latest -t 192.168.0.4:5000/bljohnsondev/bjohnsonnet-migrator -f Dockerfile.migrate
+
+  migrator-push:
+    desc: Push the migrator docker image to remote
+    deps:
+      - migrator-build
+    cmds:
+      - sudo docker push 192.168.0.4:5000/bljohnsondev/bjohnsonnet-migrator
 
   docker-build:
     desc: Build the Docker image
+    deps:
+      - clean
     cmds:
+      - task: gen-resume
       - sudo docker build --no-cache . -t bljohnsondev/bjohnsonnet:latest -t 192.168.0.4:5000/bljohnsondev/bjohnsonnet
 
   docker-push:
