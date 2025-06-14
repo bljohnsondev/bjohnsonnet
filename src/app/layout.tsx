@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { getInfo } from '@/lib/data-loader';
+import { infoData } from '@/lib/data-loader';
 
 import 'open-props/style';
 import 'open-props/normalize';
@@ -14,11 +14,9 @@ import '@/styles/toast.css';
 import '@/styles/themes.css';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const info = await getInfo();
-
   return {
-    title: info.name,
-    description: info.description,
+    title: infoData.site?.name,
+    description: infoData.site?.description,
   };
 }
 

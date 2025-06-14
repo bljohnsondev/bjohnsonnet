@@ -10,38 +10,29 @@
     "dbinit": "prisma migrate dev --name init",
     "dbgen": "prisma generate",
     "start": "next start",
-    "lint": "biome check src && biome check scripts && tsc --noEmit",
-    "gen-resume": "tsx scripts/generate-resume-pdf.ts http://localhost:3000/resume-ats brentjohnson_resume.pdf"
+    "lint": "biome check src && tsc --noEmit"
   },
   "dependencies": {
-    "@headlessui/react": "^2.2.0",
+    "@headlessui/react": "^2.2.4",
     "@prisma/client": "6.4.1",
     "clsx": "^2.1.1",
-    "ky": "^1.7.5",
+    "ky": "^1.8.1",
     "lucide-react": "^0.510.0",
     "next": "15.1.7",
-    "open-props": "^1.7.12",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-hook-form": "^7.54.2",
-    "react-toastify": "^11.0.3",
-    "remark": "^15.0.1",
-    "remark-html": "^16.0.1"
+    "open-props": "^1.7.15",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-hook-form": "^7.57.0",
+    "react-toastify": "^11.0.5"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "playwright-chromium": "^1.52.0",
-    "prisma": "^6.4.1",
-    "tsx": "^4.19.4",
-    "typescript": "^5"
+    "@types/node": "^20.19.0",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "prisma": "^6.9.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
   },
-  "packageManager": "pnpm@10.2.1+sha512.398035c7bd696d0ba0b10a688ed558285329d27ea994804a52bad9167d8e3a72bcb993f9699585d3ca25779ac64949ef422757a6c31102c12ab932e5cbe5cc92",
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "playwright-chromium"
-    ]
-  }
+  "packageManager": "pnpm@10.2.1+sha512.398035c7bd696d0ba0b10a688ed558285329d27ea994804a52bad9167d8e3a72bcb993f9699585d3ca25779ac64949ef422757a6c31102c12ab932e5cbe5cc92"
 }

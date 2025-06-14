@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { getInfo, getResumeData } from '@/lib/data-loader';
+import { infoData } from '@/lib/data-loader';
 
 import styles from './layout.module.css';
 
@@ -9,12 +9,9 @@ interface ResumeLayoutProps {
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const info = await getInfo();
-  const resumeData = await getResumeData();
-
   return {
-    title: resumeData.pdfTitle ?? info.name,
-    description: info.description,
+    title: infoData.resume?.pdfTitle ?? infoData.site?.name,
+    description: infoData.site?.description,
   };
 }
 

@@ -1,18 +1,17 @@
-import type { Skill } from '@/types/skill';
+import { skillsData } from '@/lib/data-loader';
 
 import styles from './resume-skill-section.module.css';
 
 interface SkillSectionProps {
   title: string;
-  allSkills: Skill[];
   skillNames?: string[];
 }
 
-export function SkillSection({ title, allSkills, skillNames }: SkillSectionProps) {
+export function SkillSection({ title, skillNames }: SkillSectionProps) {
   if (!skillNames || skillNames.length === 0) return null;
 
   const getSkillLabel = (skillShort: string): string | undefined => {
-    return allSkills.find(sk => sk.name === skillShort)?.label;
+    return skillsData?.find(sk => sk.name === skillShort)?.label;
   };
 
   return (

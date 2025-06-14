@@ -6,7 +6,7 @@ import { getContactUrl } from '@/utils';
 export async function POST(request: Request) {
   const message: ContactMessage = await request.json();
 
-  if (!message.name || !message.email || !message.message || !message.subject) {
+  if (!message.message) {
     return Response.json({});
   }
 
@@ -34,7 +34,6 @@ async function sendAppriseNotification(message: ContactMessage) {
     body: `Message received from website:
 Name:    ${message.name}
 Email:   ${message.email}
-Subject: ${message.subject}
 Message:
 ${message.message}
 `,
@@ -63,7 +62,6 @@ async function saveMessage(message: ContactMessage, ipAddress: string | undefine
       ipaddress: ipAddress,
       name: message.name,
       email: message.email,
-      subject: message.subject,
       message: message.message,
       createdAt: new Date(),
     },

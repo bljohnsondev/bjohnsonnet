@@ -1,19 +1,14 @@
 import { Building2, GraduationCap, type LucideIcon, User } from 'lucide-react';
 
-import { getEmployment } from '@/lib/data-loader';
-import type { ResumeData } from '@/types/resume-data';
+import { infoData } from '@/lib/data-loader';
 
 import { SectionTitle } from './section-title';
 import { SplitSection } from './split-section';
 
 import styles from './resume-sections.module.css';
 
-interface ResumeSectionsProps {
-  resume: ResumeData;
-}
-
-export async function ResumeSections({ resume }: ResumeSectionsProps) {
-  const jobs = await getEmployment();
+export async function ResumeSections() {
+  if (!infoData.resume) return null;
 
   return (
     <div className={styles.container}>
@@ -21,14 +16,14 @@ export async function ResumeSections({ resume }: ResumeSectionsProps) {
         <Title icon={User} title="Resume Summary" />
         <SplitSection>
           <SplitSection.Left />
-          <SplitSection.Right className={styles.summary}>{resume.summary}</SplitSection.Right>
+          <SplitSection.Right className={styles.summary}>{infoData.resume.summary}</SplitSection.Right>
         </SplitSection>
       </section>
       <section>
         <Title icon={Building2} title="Work Experience" />
-        {jobs.map(job => (
+        {infoData.employment?.map(job => (
           <WorkSection
-            key={`rjob-${job.id}`}
+            key={`rjob-${job.company}-${job.monthStart}${job.monthEnd}`}
             startDate={`${job.monthStart} ${job.yearStart}`}
             endDate={job.yearEnd ? `${job.monthEnd} ${job.yearEnd}` : undefined}
             title={job.title}
@@ -36,24 +31,24 @@ export async function ResumeSections({ resume }: ResumeSectionsProps) {
           >
             {job.duties && (
               <ul>
-                {job.duties.map(duty => (
-                  <li key={`jdt-${job.id}-${duty}`}>{duty}</li>
+                {job.duties.map((duty, index) => (
+                  <li key={`jdt-${job.company}-${index}`}>{duty}</li>
                 ))}
               </ul>
             )}
           </WorkSection>
         ))}
       </section>
-      {resume.education && (
+      {infoData.resume.education && (
         <section>
           <Title icon={GraduationCap} title="Education" />
           <SplitSection>
             <SplitSection.Left />
             <SplitSection.Right className={styles.education}>
-              <h1>{resume.education.institution}</h1>
-              <div>{resume.education.location}</div>
-              <div>{resume.education.degree}</div>
-              <div>{resume.education.major}</div>
+              <h1>{infoData.resume.education.institution}</h1>
+              <div>{infoData.resume.education.location}</div>
+              <div>{infoData.resume.education.degree}</div>
+              <div>{infoData.resume.education.major}</div>
             </SplitSection.Right>
           </SplitSection>
         </section>

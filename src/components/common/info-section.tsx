@@ -5,14 +5,15 @@ import styles from './info-section.module.css';
 interface InfoSectionProps {
   info: InfoData;
 }
+
 export function InfoSection({ info }: InfoSectionProps) {
   return (
     <section className={styles.infosection}>
-      <h1 className={styles.name}>{info.name}</h1>
-      <div className={styles.title}>{info.title}</div>
-      <div className={styles.company}>{info.company}</div>
-      <div className={styles.department}>{info.department}</div>
-      <div className={styles.summary}>{info.summary}</div>
+      <h1 className={styles.name}>{info.site?.name}</h1>
+      <div className={styles.tagline}>{info.site?.tagline}</div>
+      <div className={styles.company}>
+        {info.site?.title} at {info.site?.company}
+      </div>
     </section>
   );
 }

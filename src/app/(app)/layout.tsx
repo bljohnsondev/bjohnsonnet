@@ -5,7 +5,7 @@ import { InfoSection } from '@/components/common/info-section';
 import { NavSection } from '@/components/common/nav-section';
 import { ResumeLink } from '@/components/common/resume-link';
 import { ToggleTheme } from '@/components/common/toggle-theme';
-import { getInfo } from '@/lib/data-loader';
+import { infoData } from '@/lib/data-loader';
 
 import styles from './layout.module.css';
 import { navItems } from './nav-items';
@@ -15,8 +15,6 @@ interface AppLayoutProps {
 }
 
 export default async function AppLayout({ children }: AppLayoutProps) {
-  const info = await getInfo();
-
   return (
     <div className={styles.topcontainer}>
       <aside className={styles.themecontainer}>
@@ -25,13 +23,13 @@ export default async function AppLayout({ children }: AppLayoutProps) {
       <div className={styles.container}>
         <div className={styles.splitgrid}>
           <header className={styles.infocontainer}>
-            <InfoSection info={info} />
+            <InfoSection info={infoData} />
             <NavSection items={navItems} />
             <section className={styles.resumebar}>
-              <ResumeLink url={info.resumeUrl} />
+              <ResumeLink url={infoData.site?.resumeUrl} />
             </section>
             <section className={styles.iconbar}>
-              <IconBar githubUrl={info.githubUrl} linkedinUrl={info.linkedinUrl} />
+              <IconBar githubUrl={infoData.site?.githubUrl} linkedinUrl={infoData.site?.linkedinUrl} />
             </section>
           </header>
           <main className={styles.content}>{children}</main>

@@ -1,6 +1,5 @@
 export interface ContactMessage {
-  name: string;
-  email: string;
-  subject: string;
+  name?: string;
+  email?: string;
   message: string;
 }

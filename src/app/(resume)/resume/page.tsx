@@ -1,6 +1,6 @@
 import { Braces, User } from 'lucide-react';
 
-import { getInfo, getResumeData, getSkills } from '@/lib/data-loader';
+import { infoData, skillsData } from '@/lib/data-loader';
 
 import { ResumeSections } from './components/resume-sections';
 import { SectionTitle } from './components/section-title';
@@ -8,12 +8,8 @@ import { SectionTitle } from './components/section-title';
 import styles from './page.module.css';
 
 export default async function Resume() {
-  const info = await getInfo();
-  const skills = await getSkills();
-  const resumeData = await getResumeData();
-
   function getSkillName(skillShort: string): string | undefined {
-    return skills.find(sk => sk.name === skillShort)?.label;
+    return skillsData.find(sk => sk.name === skillShort)?.label;
   }
 
   function stripHttps(url: string): string {
@@ -26,61 +22,61 @@ export default async function Resume() {
         <header className={styles.info}>
           <img src="/images/pic_resume_bw.png" alt="Me in Black and White" className={styles.face} />
           <div className={styles.infodesc}>
-            <h1 className={styles.name}>{info.name}</h1>
-            <span className={styles.title}>{resumeData.title}</span>
+            <h1 className={styles.name}>{infoData.site?.name}</h1>
+            <span className={styles.title}>{infoData.resume?.title}</span>
           </div>
         </header>
-        <ResumeSections resume={resumeData} />
+        <ResumeSections />
       </div>
       <div className={styles.rightcolumn}>
         <div>
           <SectionTitle icon={User}>Personal Info</SectionTitle>
           <div className={styles.infoitemlist}>
-            {info.email && (
+            {infoData.site?.email && (
               <InfoItem title="Email">
-                <a href={`mailto:${info.email}`}>{info.email}</a>
+                <a href={`mailto:${infoData.site.email}`}>{infoData.site.email}</a>
               </InfoItem>
             )}
-            {info.websiteUrl && (
+            {infoData.site?.websiteUrl && (
               <InfoItem title="Website">
-                <a href={info.websiteUrl} target="_blank" rel="noopener noreferrer">
-                  {stripHttps(info.websiteUrl)}
+                <a href={infoData.site.websiteUrl} target="_blank" rel="noopener noreferrer">
+                  {stripHttps(infoData.site.websiteUrl)}
                 </a>
               </InfoItem>
             )}
-            {info.linkedinUrl && (
+            {infoData.site?.linkedinUrl && (
               <InfoItem title="LinkedIn">
-                <a href={info.linkedinUrl} target="_blank" rel="noopener noreferrer">
-                  {stripHttps(info.linkedinUrl)}
+                <a href={infoData.site.linkedinUrl} target="_blank" rel="noopener noreferrer">
+                  {stripHttps(infoData.site.linkedinUrl)}
                 </a>
               </InfoItem>
             )}
-            {info.githubUrl && (
+            {infoData.site?.githubUrl && (
               <InfoItem title="Github">
-                <a href={info.githubUrl} target="_blank" rel="noopener noreferrer">
-                  {stripHttps(info.githubUrl)}
+                <a href={infoData.site.githubUrl} target="_blank" rel="noopener noreferrer">
+                  {stripHttps(infoData.site.githubUrl)}
                 </a>
               </InfoItem>
             )}
           </div>
         </div>
-        {resumeData.skills && (
+        {infoData.resume?.skills && (
           <div className={styles.infoskillslist}>
             <SectionTitle icon={Braces}>Skills</SectionTitle>
             <ul>
-              {resumeData.skills.frontend?.map(skillShort => (
+              {infoData.resume.skills.frontend?.map(skillShort => (
                 <li key={`isk-${skillShort}`}>{getSkillName(skillShort)}</li>
               ))}
-              {resumeData.skills.backend?.map(skillShort => (
+              {infoData.resume.skills.backend?.map(skillShort => (
                 <li key={`isk-${skillShort}`}>{getSkillName(skillShort)}</li>
               ))}
-              {resumeData.skills.database?.map(skillShort => (
+              {infoData.resume.skills.database?.map(skillShort => (
                 <li key={`isk-${skillShort}`}>{getSkillName(skillShort)}</li>
               ))}
-              {resumeData.skills.tools?.map(skillShort => (
+              {infoData.resume.skills.tools?.map(skillShort => (
                 <li key={`isk-${skillShort}`}>{getSkillName(skillShort)}</li>
               ))}
-              {resumeData.skills.methodologies?.map(skillShort => (
+              {infoData.resume.skills.methodologies?.map(skillShort => (
                 <li key={`isk-${skillShort}`}>{getSkillName(skillShort)}</li>
               ))}
             </ul>

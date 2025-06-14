@@ -3,12 +3,12 @@
   font-weight: var(--font-weight-6);
   letter-spacing: var(--font-letterspacing-1);
   color: var(--info-name-color);
-  margin-bottom: var(--size-2);
+  margin-bottom: var(--size-1);
 }
 
-.title {
+.tagline {
   color: var(--info-title-color);
-  font-size: var(--font-size-3);
+  font-size: var(--font-size-1);
   margin-bottom: var(--size-2);
 }
 
@@ -16,15 +16,4 @@
   color: var(--info-company-color);
   font-size: var(--font-size-1);
   font-weight: var(--font-weight-5);
-}
-
-.department {
-  color: var(--info-department-color);
-  font-size: var(--font-size-1);
-  font-style: italic;
-}
-
-.summary {
-  color: var(--info-summary-color);
-  margin-top: var(--size-2);
 }

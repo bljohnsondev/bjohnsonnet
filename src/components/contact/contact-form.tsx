@@ -16,7 +16,6 @@ import styles from './contact-form.module.css';
 interface FormValues {
   contactName?: string;
   email?: string;
-  subject?: string;
   message?: string;
 }
 
@@ -26,13 +25,12 @@ export function ContactForm() {
     defaultValues: {
       contactName: '',
       email: '',
-      subject: '',
       message: '',
     },
   });
 
   async function onSubmit(values: FormValues) {
-    if (!values.contactName || !values.email || !values.subject || !values.message) {
+    if (!values.message) {
       toast.error('Please fill in the required fields');
       return;
     }
@@ -40,7 +38,6 @@ export function ContactForm() {
     const message: ContactMessage = {
       name: values.contactName,
       email: values.email,
-      subject: values.subject,
       message: values.message,
     };
 
@@ -63,36 +60,8 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-      <Input
-        label="Name"
-        name="contactName"
-        disabled={loading}
-        required
-        rules={{ required: 'Name is required' }}
-        control={control}
-      />
-      <Input
-        label="Email"
-        name="email"
-        disabled={loading}
-        required
-        rules={{
-          required: 'Email is required',
-          pattern: {
-            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-            message: 'Email is invalid',
-          },
-        }}
-        control={control}
-      />
-      <Input
-        label="Subject"
-        name="subject"
-        disabled={loading}
-        required
-        rules={{ required: 'Subject is required' }}
-        control={control}
-      />
+      <Input label="Name" name="contactName" disabled={loading} control={control} />
+      <Input label="Email" name="email" disabled={loading} control={control} />
       <Textarea
         label="Message"
         name="message"
